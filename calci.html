@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head><title>Calculator</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+ 
+#div1 {border:1px solid black; width:30%; box-shadow: 5px 5px 3px; background:linear-gradient( to top left, blue, royalblue, blue); background-repeat: no-repeat; border-radius: 10px;}
+#text {width:90%; border-radius: 2px}
+
+#button:hover {background:linear-gradient( white, navy, navy); color:white; box-shadow: 1px 1px 1px;}
+
+
+#button { width:70%; border-radius:5px; color:black; margin-left: 20%; margin-top: 20%;}
+
+
+.table-responsive {width:100%;}
+
+</style>
+<script>
+function calci(x)
+{
+document.getElementById("text").value= document.getElementById("text").value+x;
+}
+
+</script>
+<head>
+<body style="background-color: grey;">
+<center>
+
+<br><br>
+<div id="div1" class="container-fluid" >
+
+<br><br>
+<div class="form-group">
+<input type=text id=text class="form-control"></div><br>
+
+<div class="table-responsive">
+<table  class="table borderless">
+
+<tr id="row1">
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button7 value=7 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button8 value=8 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button9 value=9 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button+ value=+ onclick="calci(this.value)"></div></td></tr>
+
+<tr id="row1">
+<td><div class="form-group"><input type=button id="button" class="form-control"  name=button4 value=4 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button5 value=5 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control"  name=button6 value=6 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control"  name=button- value=- onclick="calci(this.value)"></div></td></tr>
+
+<tr id="row1">
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button1 value=1 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button2 value=2 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button3 value=3 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button* value=* onclick="calci(this.value)"></div></td></tr>
+
+<tr id="row1"><td>
+<div class="form-group"><input type=button id="button" class="form-control" name=button0 value=0 onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=equal= value== onclick="text.value=eval(text.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button/ value=/ onclick="calci(this.value)"></div></td>
+<td><div class="form-group"><input type=button id="button" class="form-control" name=button. value=. onclick="calci(this.value)"></div></td></tr>
+
+</table>
+
+</div></div>
+</center>
+</body>
+</html>
