@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+Login Form 2 </title>
+<style>
+table td {
+    border-top: none !important;
+}
+
+/** .borderless > thead > tr > th,
+.borderless > tbody > tr > th,
+.borderless > tfoot > tr > th,
+.borderless > thead > tr > td,
+.borderless > tbody > tr > td,
+.borderless > tfoot > tr > td {
+  border-top: none;
+} **/
+
+#one {background:linear-gradient( lightgrey, grey, grey, grey); width:50%; font-size: 25px; }
+#two {width:50%; background-color: white;}
+input.form-control {width:84%; margin-left:10%; border:3px dotted black;}
+</style>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background:linear-gradient(green, yellow); background-repeat: no-repeat;" ng-app="myapp" ng-controller="myctrl">
+<center>
+<h2 style="color:white; font-family: verdana"> Colorful Contact Form </h2>
+
+<div id="one" class="container-fluid">
+Contact Form
+</div>
+
+<div id="two" >
+<br>
+
+<div class="table-responsive">
+<table class="table borderless">
+<tr>
+<td style="padding:10px;"><a href="https://www.facebook.com/" target="_blank"><img src="fb.png" class="img-rounded img-responsive" style="margin-left: 25%"></a></td></div>
+
+    
+<td style="padding:10px;"><a href="https://twitter.com/" target="_blank"><img src="tweet.png" class="img-rounded img-responsive"></a></td></div></tr>
+
+
+    <tr>
+<td style="padding:10px"><a href="https://plus.google.com/collections/featured" target="_blank"><img src="plus.png" class="img-rounded img-responsive" style="margin-left: 25%"></a></td></div>
+
+         
+<td style="padding:10px; "><a href="https://www.linkedin.com/" target="_blank"><img src="link.jpg" class="img-rounded img-responsive"></a></td></div></tr>
+
+<form ng-submit="myfunc()">
+<tr><td colspan="2"></td></tr>
+ <tr><td colspan="2">
+ <div class="form-group">
+
+ <input type="text" class="form-control" placeholder="Your Full Name" ng-model="name" required></div></td></tr>
+ <tr><td colspan="2"><div class="form-group">
+
+ <input type="email" class="form-control" placeholder="Email Address" ng-model="email" required></div></td></tr>
+
+ <tr><td colspan="2"><div class="form-group">
+
+ <input type="text" class="form-control" placeholder="UserName" ng-model="username" required></div></td></tr>
+
+ <tr><td colspan="2"><div class="form-group">
+
+ <input type="password" class="form-control" placeholder="Enter password" ng-model="password" required</div></td></tr>
+
+<tr><td colspan="2">
+
+<button type="submit" style="width:84%; margin-left:10%; background-color: white; border:3px dotted black;  border-radius: 5px"> SUBSCRIBE </button></td></tr>
+
+</table>
+</form>
+</div>
+</div>
+<br><br>
+</center>
+
+<script>
+
+var app=angular.module("myapp", []);
+app.controller("myctrl", function($scope){
+
+$scope.myfunc=function(){
+alert("Thank you for your subscription!")
+	};
+});
+</script>
+
+</body>
+</html>

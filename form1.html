@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+Login Form 1 </title>
+
+<style>
+
+input.form-control[placeholder] {color: royalblue !important;}
+input-placeholder {color: red !important;} 
+
+
+.inner-addon { position: relative; }
+.inner-addon .glyphicon {position: absolute; padding: 10px;pointer-events: none;}
+.left-addon .glyphicon  { left: 5%; color:#4169E1;}
+.right-addon .glyphicon { right: 0%;}
+.left-addon input  { padding-left:  30px;  }
+.right-addon input { padding-right: 30px; }
+
+
+#div1 {width:40%; background-color: white; padding:10px; border-radius:5px; 
+    box-shadow:6px 6px 10px #000000; }
+#div2 {background: linear-gradient(black, grey, black); border-radius:5px; }
+
+input.form-control { width:90%;  border-radius: 20px; border-color:none; background:linear-gradient(grey, lightgrey);}
+</style>
+
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+
+</head>
+
+
+<body style="background-color: grey;" ng-app="thisapp" ng-controller="thisctrl" >
+<center>
+<br>
+<div id="div1" class="container-fluid" >
+
+
+<div id="div2">
+<br>
+<h2 style="color:white;"> Create an Account </h2> 
+
+<br>
+
+<form ng-submit="thisfunc()">
+
+
+<div class="inner-addon left-addon"><i class="glyphicon glyphicon-user"></i>
+<div class="form-group"><input type="text" placeholder="Name" class="form-control" ng-model="name" required></div></div>
+
+
+<div class="inner-addon left-addon"><i class="glyphicon glyphicon-earphone"></i>
+<div class="form-group">
+<input type="tel" placeholder="Phone Number" class="form-control" ng-model="number" required></div></div>
+
+
+<div class="inner-addon left-addon"><i class="glyphicon glyphicon-envelope"></i>
+<div class="form-group">
+<input type="email" placeholder="Email" class="form-control" ng-model="email" required></div></div>
+
+
+<div class="inner-addon left-addon"><i class="glyphicon glyphicon-lock"></i>
+<div class="form-group">
+<input type="password" placeholder="Password" class="form-control" ng-model="password" required></div> </div>
+
+<div class="checkbox">
+    <label><input type="checkbox" ng-model="check" required><font style="color:white;"> I agree to the terms and conditions and privacy policy</label>
+  </div>
+
+  <button type="submit" style="background-color:#4169E1; border-radius: 10px" class="btn btn-default"><font style="color:white">Create Account</font></button><br>
+
+
+  <br>
+<br>
+
+
+</form>
+</div>
+</div>
+</center>
+
+
+<script>
+
+var app=angular.module("thisapp", []);
+app.controller("thisctrl", function($scope){
+$scope.name="Kenny Sabastian";
+$scope.number=4524995032;
+$scope.email="Kenny.s@gmail.com";
+$scope.thisfunc=function(){
+	alert("Congratulations! Your account has been created.");
+};
+
+
+});
+</script>
+</body>
+</html>
