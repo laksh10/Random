@@ -1,0 +1,87 @@
+<html>
+<head>
+
+<style>
+table {background-color: lightpink; padding:5px; color:white; font-family: calibri; font-size: 20px; border-radius: 5px;}
+table td{padding:5px;}
+table thead{background-color:lightseagreen;}
+body {background-color: hotpink;}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+
+</head>
+<body>
+<center>
+
+<div ng-app="books" ng-controller="authors">
+<font style="color:white; font-family:calibri; font-size:20px; ">Rows to display:</font>
+<input type="number" step="1" min="0" max="10" ng-model="displayRows" style="border:5px solid lightseagreen; border-radius: 5px;" ><br><br>
+<table>
+<thead>
+<tr>
+       <th> Book  </th>
+       <th>  Author  </th>
+       <th> Gender </th>
+       <th> Release Date </th>
+       <th> Price </th>   </tr> </thead>
+
+
+ <tbody>
+
+<tr ng-repeat="variable in bookmark | limitTo:displayRows">    
+     <td>{{variable.name | uppercase}}</td>
+          <td>{{variable.author}}</td>
+     <td>{{variable.gender | lowercase}}</td>
+     <td>{{variable.releaseDate | date:"MM/dd/yyyy" }}</td>
+     <td>{{variable.price | currency}}</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<script>
+var app=angular.module("books", []);
+app.controller("authors", function($scope){
+	var bookmark = [
+         {name:"Deathly Hallows", author:"JK Rowling", gender:"Female", releaseDate: new Date("November 23, 2008"), price:20 },
+         {name:"The Shining", author:"Stephen King", gender:"Male", releaseDate: new Date("August 8, 1986"), price:20 },
+         {name:"PS I Love You", author:"Cecelia Ahern", gender:"Female", releaseDate: new Date("July 16, 2006"), price:15 },
+         {name:"The Husband", author:"Dean Koontz", gender:"Male", releaseDate: new Date("February 14, 1995"), price:15 },
+         {name:"Rage of Angels", author:"Sidney Sheldon", gender:"Male", releaseDate: new Date("September 10, 1990"), price:20 },
+         {name:"The Notebook", author:"Nicholas Sparks", gender:"Male", releaseDate: new Date("July 5, 2003"), price:20 },
+         {name:"Two States", author:"Chetan Bhagat", gender:"Male", releaseDate: new Date("May 30, 2012"), price:20 },
+         {name:"Remember Me", author:"Sophie Kinsella", gender:"Female", releaseDate: new Date("December 12, 2009"), price:20 },
+         {name:"I Heart Paris", author:"Lindsey Kelk", gender:"Female", releaseDate: new Date("January 20, 2008"), price:15 },
+         {name:"Insurgent #2", author:"Veronica Roth", gender:"Female", releaseDate: new Date("February 25, 2014"), price:15 },
+         {name:"The girl on the Train", author:"Paula Hawkins", gender:"Female", releaseDate: new Date("June 12, 2015"), price:20 },
+         {name:"Sharp Objects", author:"Gillian Flynn", gender:"female", releaseDate: new Date("May 14, 2013"), price:20 }
+
+	];
+	$scope.bookmark = bookmark;
+    $scope.displayRows = 3;
+
+
+});
+
+
+
+</script>
+
+</center>
+</body>
+</html>
