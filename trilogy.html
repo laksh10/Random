@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<style>
+table {background-color: lightblue; border-radius:5px; font-family: calibri; text-align: center; margin-top: 100px}
+#like {color:white; background-color: green; border-radius: 2px; border:2px solid green;}
+#like:hover {background-color: darkgreen; border:2px solid darkgreen;}
+#dislike {color:white; background-color: red; border-radius: 2px; border:2px solid red;}
+#dislike:hover {background-color: #D80000; border:2px solid #D80000   ;}
+body {background-color: cornflowerblue;}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<title>
+Likes/Dislikes</title>
+</head>
+
+
+<body ng-app="myPage">
+
+<center>
+<div ng-controller="likesDislikes">
+
+<table>
+<thead>
+<tr>
+       <th>Name</th>
+       <th>Likes</th>
+       <th>Dislikes</th>
+       <th>Like/Dislike</th>
+</tr>
+</thead>
+
+<tbody>
+   <tr ng-repeat="variable in Trilogies">
+<td>{{ variable.name }} </td>
+<td>{{ variable.likes }} </td>
+<td>{{ variable.dislikes }} </td>
+<td>
+     <input type="button" id="like" value="like" ng-click="incrementLikes(variable)">
+     <input type="button" id="dislike" value="dislike" ng-click="incrementDisLikes(variable)"> 
+     </td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+</center>
+
+<script>
+
+var app=angular.module("myPage", [])
+app.controller("likesDislikes", function($scope){
+	var Trilogies = [
+       {name:"Divergent Trilogy", likes:0, dislikes:0},
+        {name:"Hunger Games Trilogy", likes:0, dislikes:0},
+          {name:"Delirium Trilogy", likes:0, dislikes:0},
+           {name:"Ruby Red Trilogy", likes:0, dislikes:0}
+	];
+
+	$scope.Trilogies = Trilogies;
+
+	$scope.incrementLikes = function(variable){
+	variable.likes++;
+	}
+
+    $scope.incrementDisLikes = function(variable){
+	variable.dislikes++;
+	}
+});
+
+</script>
+</body>
+</html>
